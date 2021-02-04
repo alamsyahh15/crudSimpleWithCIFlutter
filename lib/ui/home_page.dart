@@ -12,6 +12,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<User> listUser = [], listBackup = [];
+  
+  /// Revisi Simple filter
+  ///
+  /// Note Implementasikan Metode Search Sebelumnya
+  filterByAge(String inputQuery) {
+    listBackup = listUser;
+    if (inputQuery.isNotEmpty || inputQuery != null) {
+      listBackup = listBackup.where((e) => e.age == inputQuery).toList();
+    }
+    setState(() {});
+  }
 
   //method initial akan dipanggil pertama kali membuka screen homepage
   void initial() async {
@@ -76,12 +87,14 @@ class _HomePageState extends State<HomePage> {
                                   child: Text('19'),
                                   color: Colors.red,
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                      return ListUmur(
-                                        age: 19,
-                                      );
-                                    }));
+                                    Navigator.pop(context);
+                                    filterByAge("19");
+                                    // Navigator.push(context, MaterialPageRoute(
+                                    //     builder: (BuildContext context) {
+                                    //   return ListUmur(
+                                    //     age: 19,
+                                    //   );
+                                    // }));
                                   },
                                 ),
                                 SizedBox(
@@ -91,12 +104,14 @@ class _HomePageState extends State<HomePage> {
                                   child: Text('20'),
                                   color: Colors.blue,
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                      return ListUmur(
-                                        age: 20,
-                                      );
-                                    }));
+                                    Navigator.pop(context);
+                                    filterByAge("20");
+                                    // Navigator.push(context, MaterialPageRoute(
+                                    //     builder: (BuildContext context) {
+                                    //   return ListUmur(
+                                    //     age: 20,
+                                    //   );
+                                    // }));
                                   },
                                 ),
                                 SizedBox(
@@ -106,12 +121,14 @@ class _HomePageState extends State<HomePage> {
                                   child: Text('21'),
                                   color: Colors.yellow,
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                      return ListUmur(
-                                        age: 21,
-                                      );
-                                    }));
+                                    Navigator.pop(context);
+                                    filterByAge("21");
+                                    // Navigator.push(context, MaterialPageRoute(
+                                    //     builder: (BuildContext context) {
+                                    //   return ListUmur(
+                                    //     age: 21,
+                                    //   );
+                                    // }));
                                   },
                                 ),
                                 SizedBox(
@@ -121,12 +138,14 @@ class _HomePageState extends State<HomePage> {
                                   child: Text('22'),
                                   color: Colors.green,
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                      return ListUmur(
-                                        age: 22,
-                                      );
-                                    }));
+                                    Navigator.pop(context);
+                                    filterByAge("22");
+                                    // Navigator.push(context, MaterialPageRoute(
+                                    //     builder: (BuildContext context) {
+                                    //   return ListUmur(
+                                    //     age: 22,
+                                    //   );
+                                    // }));
                                   },
                                 ),
                                 SizedBox(
@@ -136,12 +155,14 @@ class _HomePageState extends State<HomePage> {
                                   child: Text('23'),
                                   color: Colors.orange,
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                      return ListUmur(
-                                        age: 23,
-                                      );
-                                    }));
+                                    Navigator.pop(context);
+                                    filterByAge("23");
+                                    // Navigator.push(context, MaterialPageRoute(
+                                    //     builder: (BuildContext context) {
+                                    //   return ListUmur(
+                                    //     age: 23,
+                                    //   );
+                                    // }));
                                   },
                                 ),
                               ],
