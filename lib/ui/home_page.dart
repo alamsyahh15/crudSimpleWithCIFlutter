@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
       String query = inputQuery.toLowerCase();
       // listUser = listUser
       listBackup = listUser
-          .where((element) => element.name.toLowerCase().contains(query))
+          .where((element) => element.name.toLowerCase().contains(query) || element.age.toLowerCase() == query)
           .toList();
     }
     setState(() {});
@@ -106,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Text('21'),
                                   color: Colors.yellow,
                                   onPressed: () {
+                                    search("21");
                                     Navigator.push(context, MaterialPageRoute(
                                         builder: (BuildContext context) {
                                       return ListUmur(
